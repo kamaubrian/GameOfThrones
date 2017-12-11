@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +9,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/got',[
+    'middleware' => ['auth'],
+    'uses' =>function(){
+        echo" You are Allowed to View This Page";
+    }
+]);
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/logout',function(){
+   Auth::logout();
+   return redirect('/');
+});
+Route::get('/','ListController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
