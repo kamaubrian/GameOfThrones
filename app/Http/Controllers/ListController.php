@@ -16,7 +16,8 @@ class ListController extends Controller
             'Ramsay Bolton'      => 'Iwan Rheon',
             'Petyr Baelish'      => 'Aidan Gillen',
             'Brienne of Tarth'   => 'Gwendoline Christie',
-            'Lord Varys'         => 'Conleth Hill'
+            'Lord Varys'         => 'Conleth Hill',
+            'Mtoto Dev'          => 'Brian Kamau'
         ];
 
         return view('welcome')->withCharacters($characters);

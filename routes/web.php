@@ -27,3 +27,13 @@ Route::get('/','ListController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('role',[
+    'middleware' =>'role::editor',
+    'uses'=>'TestController@index',
+    ]);
+
+Route::get('terminate',[
+    'middleware' => 'terminate',
+    'uses' => "TestController@testTerminateController",
+]);
