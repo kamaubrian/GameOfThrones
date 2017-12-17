@@ -37,3 +37,7 @@ Route::get('terminate',[
     'middleware' => 'terminate',
     'uses' => "TestController@testTerminateController",
 ]);
+Route::get('profile',[
+   'middleware' => 'auth',
+   'uses'=> 'UserController@showProfile'
+]);
