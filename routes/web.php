@@ -41,3 +41,8 @@ Route::get('profile',[
    'middleware' => 'auth',
    'uses'=> 'UserController@showProfile'
 ]);
+
+Route::get('/usercontroller/path',[
+   'middleware'=> 'first',
+   'uses' => 'UserController@showProfile'
+]);

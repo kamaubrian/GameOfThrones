@@ -9,10 +9,19 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth');
+        $this->middleware('second');
     }
 
-    public function showProfile(){
+    public function showProfile(Request $request){
+        $uri = $request->path();
+        echo'<br> URI'.$uri;
 
+        $url = $request->url();
+        echo '<br>';
+        echo 'URL: '.$url;
+        $method = $request->method();
+        echo '<br>';
+
+        echo 'Method'.$method;
     }
 }
